@@ -1,0 +1,260 @@
+/* Reset estratégico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.dark {
+    background: #111827;
+}
+
+/* Header */
+.header {
+    background: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* MENU MOBILE */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: 0.3s;
+    display: flex;
+    z-index: 999;
+}
+
+/* Quando abrir */
+.nav-links.active {
+    right: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+/* Hero */
+.hero {
+    padding-top: 120px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.hero h1 span {
+    color: #1e90ff;
+}
+
+/* Grid */
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Cards */
+.card {
+    background: #000;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Portfolio */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(30,144,255,0.8);
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: 0.3s;
+}
+
+.portfolio-item:hover .overlay {
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media(min-width:768px) {
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .grid-2 {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+    }
+
+    .nav-links {
+        position: static;
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        background: none;
+    }
+    
+}
+
+/* SOCIAL FLOAT */
+.social-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:999;
+}
+
+.social-float a{
+  width:50px;
+  height:50px;
+  background:#1e293b;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+
+.social-float a:hover{
+  transform:translateY(-5px) scale(1.05);
+  background:#2563eb;
+}
+
+.social-float img{
+  width:24px;
+  height:24px;
+}
+
+.btn{
+  display:inline-block;
+  background:linear-gradient(135deg, #2563eb, #1e40af);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease;
+  box-shadow:0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* Hover (efeito profissional) */
+.btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 15px 35px rgba(37, 99, 235, 0.6);
+}
+
+/* Clique */
+.btn:active{
+  transform:scale(0.98);
+}
+
+.btn{
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,99,235,0.6);}
+  70%{box-shadow:0 0 0 15px rgba(37,99,235,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,99,235,0);}
+}
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media(min-width: 768px) {
+    .hamburger {
+        display: center;
+    }
+}
